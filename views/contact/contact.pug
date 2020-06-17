@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  section.Material-contact-section.section-padding.section-dark
+    .container
+      .row(style="color:white;")
+        // Section Titile
+        .col-md-12.wow.animated.fadeInLeft(data-wow-delay='.2s')
+          h1.section-title contactez nous
+      .row(style="color:white;")
+        // contact form
+        .col-md-6.wow.animated.fadeInRight(data-wow-delay='.2s')
+          form#contactForm.shake(role='form' method='post' name='contact-form' data-toggle='validator')
+            // Name
+            .form-group.label-floating
+              label.control-label(for='name') Nom
+              input#name.form-control(type='text' name='name' required='' data-error='Please enter your name')
+              .help-block.with-errors
+            // email
+            .form-group.label-floating
+              label.control-label(for='email') Email
+              input#email.form-control(type='email' name='email' required='' data-error='Please enter your Email')
+              .help-block.with-errors
+            // Subject
+            .form-group.label-floating
+              label.control-label Sujet
+              input#msg_subject.form-control(type='text' name='subject' required='' data-error='Please enter your message subject')
+              .help-block.with-errors
+            // Message
+            .form-group.label-floating
+              label.control-label(for='message') Message
+              textarea#message.form-control(rows='3' name='message' required='' data-error='Write your message')
+              .help-block.with-errors
+            // Form Submit
+            .form-submit.mt-5
+              button#form-submit.btn.btn-primary(type='submit')
+                i.material-icons.mdi.mdi-message-outline
+                |  Envoyer Message
+              #msgSubmit.h3.text-center.hidden
+              .clearfix

@@ -15,5 +15,8 @@ router.use('/reservation', reservation);
 router.get('/', (req, res) => {
   res.redirect('/tchats');
 })
+router.get('/contact', (req, res) => {
+  res.render('contact/contact');
+})
 
 module.exports = router;
